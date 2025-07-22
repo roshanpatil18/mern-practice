@@ -1,14 +1,6 @@
 # **Expense Management System**
 
-## 🌐 GitHub Repo  
-```bash
-https://github.com/Prakashsaw/Expense-Management-System
-```
 
-## 🚀 Live Demo  
-```bash
-https://expense-management-system-prakash.netlify.app/
-```
 
 ## 📌 Description  
 The **Expense Management System** is a web-based application designed to help users efficiently track and manage their financial transactions.  
