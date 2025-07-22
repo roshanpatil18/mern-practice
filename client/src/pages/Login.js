@@ -134,14 +134,14 @@ const Login = () => {
                   Not a user? <Link to="/register">SignUp!</Link>
                 </div>
               </div>
-              <div className="line"></div>
+              {/* <div className="line"></div> */}
             </Form>
-            <button
+            {/* <button
               className="login-with-google-btn"
               onClick={handleClickLoginWithGoogle}
             >
               Login with Google
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

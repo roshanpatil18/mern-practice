@@ -5,9 +5,10 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 // const session = require("express-session");
 const passport = require("./controllers/auth.googleAuth")
-const GoogleAuthRoutes = require("./routes/googleAuthRoutes");
+// const GoogleAuthRoutes = require("./routes/googleAuthRoutes");
 
 const connectDb = require("./config/connectDb");
+
 // config dot env file
 dotenv.config();
 
@@ -25,16 +26,19 @@ app.set("trust proxy", 1);
 
 //routes
 // Google Auth Routes
-app.use(passport.initialize());
-app.use("/auth", GoogleAuthRoutes);
+// app.use(passport.initialize());
+// app.use("/auth", GoogleAuthRoutes);
 
-//user routes
+//user routes  
 app.use("/api/v1/users", require("./routes/userRoute"));
 //transections routes
 app.use("/api/v1/transections", require("./routes/transectionRoutes"));
 
 // user information/help routes
 app.use("/api/v1/user-information", require("./routes/userInfoRoutes"));
+
+// chatbot routes
+app.use("/api/v1/chatbot", require("./routes/chatbotRoutes"));
 
 //port
 const PORT = 8000 || process.env.PORT;
@@ -49,6 +53,9 @@ app.get("/", (req, res) => {
             <li>Login User - /api/v1/users/login</li>
             <h3>Transection Route</h3>
             <li>Transaction Route - /api/v1/transections</li>
+            <h3>Chatbot Route</h3>
+            <li>Chatbot Chat - /api/v1/chatbot/chat</li>
+            <li>Expense Summary - /api/v1/chatbot/summary</li>
             <li>Many more...</li>
         </ul></div>
     </div>`);

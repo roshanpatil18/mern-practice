@@ -19,6 +19,8 @@ import OTPVerifiedSuccess from "./pages/OTPEmailVerification/OTPVerifiedSuccess"
 import ChangePassword from "./pages/UserDetails/ChangePassword";
 import ContactUs from "./pages/UserDetails/ContactUs";
 import GoogleAuthSuccess from "./pages/GoogleAuthSuccess";
+import ChatbotPage from "./pages/ChatbotPage";
+
 
 function App() {
   return (
@@ -48,6 +50,16 @@ function App() {
             </ProtectedRoutes>
           }
         />
+
+<Route
+  path="/chatbot"
+  element={
+    <ProtectedRoutes>
+      <ChatbotPage />
+    </ProtectedRoutes>
+  }
+/>
+
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signup-success" element={<SignUpSuccess />} />

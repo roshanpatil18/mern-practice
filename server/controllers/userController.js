@@ -15,7 +15,7 @@ const axios = require("axios");
 const UserPhoneNumberModel = require("../models/userPhoneNumberModel");
 
 const { customAlphabet } = require("nanoid");
-const GoogleAuthUserModel = require("../models/model.user.googleAuth");
+// const GoogleAuthUserModel = require("../models/model.user.googleAuth");
 const alphabet =
   "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
@@ -50,14 +50,14 @@ const registerController = async (req, res) => {
       });
     }
 
-    // Check for user has already signed up or signed in with google then user can't sign up with email, already exist
-    const googleUser = await GoogleAuthUserModel.findOne({ email: email });
-    if (googleUser) {
-      return res.status(400).json({
-        status: "failed",
-        message: "User already exists with this email with SignIn with Google!",
-      });
-    }
+    // // Check for user has already signed up or signed in with google then user can't sign up with email, already exist
+    // const googleUser = await GoogleAuthUserModel.findOne({ email: email });
+    // if (googleUser) {
+    //   return res.status(400).json({
+    //     status: "failed",
+    //     message: "User already exists with this email with SignIn with Google!",
+    //   });
+    // }
 
     // Validate the email that email entered is in correct email format
     if (!validator.isEmail(email)) {
