@@ -151,8 +151,7 @@ Once the setup is complete, the app will be running on your local system.
 
 ---
 
-## 🛠 Made By  
-- [@Prakashsaw](https://github.com/Prakashsaw)  
+
 
 ---
 
