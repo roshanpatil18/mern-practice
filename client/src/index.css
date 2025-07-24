@@ -1,137 +1,142 @@
+/* Reset & Box Sizing */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-#root {
-  overflow: hidden;
+
+/* Mobile-friendly viewport */
+:root {
+  font-size: 16px;
 }
 
-/* .content {
-  height: 100%;
-} */
-
-/* transection page */
-.transaction-page {
+html, body, #root {
   width: 100%;
-  height: 113vh;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* App Container wraps all pages */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Transaction Page Layout */
+.transaction-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .transaction-page .filters {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 20px;
-  box-shadow: 0 0 3px gray;
-  margin-bottom: 10px;
-  background-color: gray;
+  padding: 1rem 0;
+  background-color: #fafafa;
+  border-bottom: 1px solid #ddd;
 }
 
-@media screen and (max-width: 1000px) {
-  .transaction-page {
-    height: 140vh;
-  }
+.transaction-page .filters > * {
+  flex: 1 1 200px;
+  min-width: 120px;
 }
 
-@media screen and (max-width: 768px) {
-  .transaction-page {
-    height: 160vh;
-  }
-  .transaction-page .content {
-    width: 120%;
-    height: 100%;
-  }
+.transaction-page .content {
+  flex: 1;
+  padding: 1rem 0;
+  width: 100%;
+  overflow-x: auto;
 }
 
-@media screen and (max-width: 500px) {
-  .transaction-page {
-    height: 160vh;
-  }
-  .transaction-page .content {
-    width: 160%;
-    height: 100%;
-  }
+.transaction-page .content .ant-table-wrapper {
+  min-width: 600px;
 }
 
-/* transection page css end */
-
-/* antd icons */
-
-.switch-icons {
-  border: 1px solid rgba(0, 0, 0, 0.677);
-  border-radius: 5px;
-  padding: 10px 15px;
-  padding-top: 5px;
-  background-color: white;
+.transaction-page .content .ant-table-cell {
+  padding: 8px 12px;
+  font-size: 0.9rem;
 }
 
-.search-bar {
-  border: 1px solid rgba(0, 0, 0, 0.677);
-  border-radius: 5px;
-  padding: 2.5px;
-  background-color: white;
-}
-
-.anticon svg {
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.active-icon {
-  color: black;
-}
-
-.inactive-icon {
-  color: gray;
-}
-
-.filter-tab .ant-select-selector {
-  width: 150px !important;
-}
-
-/* =============================
-==========footer============= */
-
+/* Footer sticks to bottom */
 .footer {
-  color: white;
-  padding: 40px;
-  margin-top: 76px;
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #434343, #000000);
-}
-
-.footer .text-center {
-  color: white;
+  padding: 2rem 0;
+  background: linear-gradient(to right, #434343, #000);
+  color: #fff;
+  text-align: center;
 }
 
 .footer a {
+  color: inherit;
   text-decoration: none;
-  color: white;
-  padding: 10px;
+  transition: color 0.2s;
 }
-
 .footer a:hover {
   color: #ffefba;
   border-bottom: 1px solid #ffefba;
 }
-/* .footer {
-  
-} */
 
+/* Utility */
 .responsive-btn {
-  background-color: white;
+  width: 100%;
+  max-width: 200px;
 }
 
 .page-not-found {
+  text-align: center;
+  padding: 4rem 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .email-sent-page {
-  padding-top: 30px;
-  margin-left: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .transaction-page .filters {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .transaction-page .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .transaction-page .filters > * {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .transaction-page .filters {
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+  .transaction-page .filters > * {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .transaction-page .content {
+    padding: 0.5rem 0;
+  }
+}
+
+/* Fluid media elements */
+img, video {
+  max-width: 100%;
+  height: auto;
 }
