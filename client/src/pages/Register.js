@@ -256,14 +256,14 @@ const Register = () => {
               </div>
             </Form>
 
-            <div className="line"></div>
+            {/* <div className="line"></div>
 
             <button
               className="login-with-google-btn"
               onClick={handleClickSignUpWithGoogle}
             >
               SignUp with Google
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
